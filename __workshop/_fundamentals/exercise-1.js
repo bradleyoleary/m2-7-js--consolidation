@@ -82,7 +82,42 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
-}
+  const superpowers = [data.superpower1, data.superpower2].filter(Boolean)
+
+  let transformedData = {
+    address: {
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry
+    },
+    superpowers: superpowers,
+    relationships: [
+      {
+        type: "mother",
+        name: data.motherName,
+        age: data.motherAge,
+        status: data.motherStatus,
+        superpowers: [data.motherSuperpower1, data.motherSuperpower2].filter(Boolean)
+      },
+      {
+        type: "best-friend",
+        name: data.bestFriendName,
+        age: data.bestFriendAge,
+        status: data.bestFriendStatus,
+        superpowers: [data.bestFriendSuperpower1, data.bestFriendSuperpower2].filter(Boolean)
+      },
+      {
+        type: "girlfriend",
+        name: data.girlfriendName,
+        age: data.girlfriendAge,
+        status: data.girlfriendStatus,
+        superpowers: [data.girlfriendSuperpower1, data.girlfriendSuperpower2].filter(Boolean)
+      }
+    ]
+  }
+  return transformedData;
+};
 
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy

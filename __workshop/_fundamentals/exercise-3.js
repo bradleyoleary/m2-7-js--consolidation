@@ -62,6 +62,19 @@ const favoriteDessertsGroupB = {
 
 function groupByValue(obj) {
   // do something
+  //Every item is given empty obj
+  let groupObj = {}
+  //Turn obj into arr using Object.values then iterate through using forEach
+  Object.values(obj).forEach((food) => {
+    groupObj[food] = []
+  });
+  //Turn obj into arr using Object.entries then iterate through using forEach. Object.entrues will return arr of entries (arr with length of 2)
+  Object.entries(obj).forEach((entry) => {
+    let [name, food] = entry;
+    groupObj[food].push(name);
+  });
+  return groupObj;
+
 }
 
 // Verification via console.log()

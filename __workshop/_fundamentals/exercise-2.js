@@ -54,7 +54,29 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   // Write code
+  //Create new empty obj
+  let allDessertItems = {}
+  //Is it a new or reoccuring desert? Count recurring desserts and store in a new object (above).
+  Object.values(obj).forEach((dessert) => {
+      if (typeof allDessertItems[dessert] === "undefined") {
+        //if it is a new desert, it must be added to our new object and give it a count of 1
+        allDessertItems[dessert] = 1;
+      }
+      //If not a new desert it must be incrimented
+      else {
+        allDessertItems[dessert]++
+      }
+  });
+  //need to put the the keys in order. Use ObjectKeys to transform obj in to arr then use sort to put in order.
+  let sortedDesserts = Object.keys(allDessertItems).sort((dessertA, dessertB) => {
+    if (allDessertItems[dessertA] < allDessertItems[dessertB]) {
+      return 1;
+    }
+    else return -1;
+  });
+  return sortedDesserts;
 }
+//returned array of objects values
 
 // Verification via console.log()
 console.log(
@@ -69,3 +91,6 @@ console.log(
 // Test your code: "yarn test exercise-2"
 
 module.exports = sortByPopularity;
+
+//forEach works over an array but not an object. But, it will work if you transform the object into an array using Object.keys. Object.values, or
+//Object.entries.

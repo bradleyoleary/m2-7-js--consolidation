@@ -20,7 +20,7 @@ body {
   min-width: 320px;
 }
 
-.bacon {
+.secondary-header {
   background: var(--beau-blue);
   position: relative;
   display: flex;
@@ -30,11 +30,11 @@ body {
   z-index: 1;
 }
 
-.bivrip {
+.button-bar {
   margin: 4px;
 }
 
-.bivrip .boom {
+.secondary-header .button-bar {
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -47,7 +47,7 @@ body {
   transition: all 0.5s;
 }
 
-.believe {
+.year-background-header {
   color: #fff;
   top: -50px;
   font-family: var(--main-font);
@@ -59,14 +59,15 @@ body {
   overflow: hidden;
 }
 
-.boom.active,
-.boom:hover {
+.button-bar.active,
+.button-bar:hover {
   background: var(--ksu-purple);
   border-color: transparent;
   color: white;
 }
 
-.what-now {
+.nums-container,
+.food-container {
   min-height: var(--large-band-height);
   display: flex;
   justify-content: center;
@@ -75,7 +76,7 @@ body {
   padding: 32px;
 }
 
-.that {
+.num {
   color: var(--ksu-purple);
   cursor: pointer;
   display: flex;
@@ -89,8 +90,8 @@ body {
   width: var(--number-container-size);
 }
 
-.that::before,
-.that::after {
+.num::before,
+.num::after {
   content: "";
   background: var(--lemon-yellow);
   border-radius: 50%;
@@ -103,14 +104,14 @@ body {
   left: -5px;
 }
 
-.that::after {
+.num::after {
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
 
-.other-stuff {
+.food-container {
   flex: 1;
   background: var(--raspberry);
   overflow: hidden;
@@ -121,7 +122,7 @@ body {
   font-size: 72px;
 }
 
-.other-stuff .aaaa {
+.food-container .food-num {
   color: #fff;
   position: relative;
   font-size: 196px;
@@ -129,7 +130,7 @@ body {
   z-index: 1;
 }
 
-.other-stuff .aaaa::before {
+.food-container .food-num::before {
   content: "";
   position: absolute;
   width: 0;
@@ -142,7 +143,7 @@ body {
   transform: rotate(20deg);
 }
 
-.other-stuff .bbbb {
+.food-name {
   color: #fff;
   background: var(--ksu-purple);
   width: 400px;
@@ -155,11 +156,11 @@ body {
   z-index: 1;
 }
 
-.eeee {
+.food-area-title {
   color: var(--melon);
 }
 
-.dddd {
+.nav {
   background: var(--ksu-purple);
   display: flex;
   flex-direction: column;
@@ -168,7 +169,8 @@ body {
   height: var(--small-band-height);
 }
 
-.cccc {
+.grubhub-title-header,
+.food-name {
   color: #fff;
   font-size: 60px;
   font-family: var(--main-font);
